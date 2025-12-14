@@ -7,10 +7,12 @@
 [![PyPI version](https://badge.fury.io/py/dotzen.svg)](https://badge.fury.io/py/dotzen)
 [![Python Support](https://img.shields.io/pypi/pyversions/dotzen.svg)](https://pypi.org/project/dotzen/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/carrington-dev/dotzen/workflows/Tests/badge.svg)](https://github.com/carrington-dev/dotzen/actions)
+<!-- [![Tests](https://github.com/carrington-dev/dotzen/workflows/Tests/badge.svg)](https://github.com/carrington-dev/dotzen/actions) -->
 [![codecov](https://codecov.io/gh/carrington-dev/dotzen/branch/main/graph/badge.svg)](https://codecov.io/gh/carrington-dev/dotzen)
 [![Documentation Status](https://readthedocs.org/projects/dotzen/badge/?version=latest)](https://dotzen.readthedocs.io/en/latest/?badge=latest)
-[![Downloads](https://pepy.tech/badge/dotzen/month)](https://pepy.tech/project/dotzen)
+<!-- [![Downloads](https://pepy.tech/badge/dotzen/month)](https://pepy.tech/project/dotzen) -->
+[![Package Downloads](https://img.shields.io/pypi/dm/dotzen)](https://pypi.org/project/dotzen/)
+
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 [Documentation](https://dotzen.readthedocs.io) | [PyPI Package](https://pypi.org/project/dotzen/) | [GitHub](https://github.com/carrington-dev/dotzen) | [Changelog](CHANGELOG.md)
