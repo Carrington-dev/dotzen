@@ -43,6 +43,11 @@ Verify Installation
    import dotzen
    print(dotzen.__version__)
 
+.. code-block:: bash
+
+   # make dotzen is installed
+   dotzen --version
+
 Installation with Cloud Providers
 ----------------------------------
 
