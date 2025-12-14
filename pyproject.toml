@@ -1,0 +1,185 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dotzen"
+version = "0.1.0"
+description = "Peaceful, type-safe Python configuration with strict separation from code"
+readme = "README.md"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Typing :: Typed",
+]
+keywords = [
+    "configuration", "config", "settings", "environment", "env", "dotenv",
+    "secrets", "cloud", "aws", "gcp", "azure", "type-safe", "validation"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "typing-extensions>=4.0.0; python_version < '3.10'",
+]
+
+[project.optional-dependencies]
+aws = ["boto3>=1.26.0", "botocore>=1.29.0"]
+gcp = ["google-cloud-secret-manager>=2.16.0"]
+azure = ["azure-keyvault-secrets>=4.7.0", "azure-identity>=1.12.0"]
+vault = ["hvac>=1.2.0"]
+yaml = ["PyYAML>=6.0"]
+toml = ["tomli>=2.0.0; python_version < '3.11'"]
+json5 = ["json5>=0.9.0"]
+
+cloud = [
+    "boto3>=1.26.0",
+    "google-cloud-secret-manager>=2.16.0",
+    "azure-keyvault-secrets>=4.7.0",
+    "azure-identity>=1.12.0",
+    "hvac>=1.2.0",
+]
+
+formats = [
+    "PyYAML>=6.0",
+    "tomli>=2.0.0; python_version < '3.11'",
+    "json5>=0.9.0",
+]
+
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-mock>=3.10.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+    "pre-commit>=3.0.0",
+    "tox>=4.0.0",
+]
+
+docs = [
+    "sphinx>=6.0.0",
+    "sphinx-rtd-theme>=1.2.0",
+    "sphinx-autodoc-typehints>=1.22.0",
+    "myst-parser>=1.0.0",
+]
+
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-mock>=3.10.0",
+    "moto[secretsmanager]>=4.0.0",
+    "responses>=0.23.0",
+]
+
+all = [
+    "boto3>=1.26.0",
+    "google-cloud-secret-manager>=2.16.0",
+    "azure-keyvault-secrets>=4.7.0",
+    "azure-identity>=1.12.0",
+    "hvac>=1.2.0",
+    "PyYAML>=6.0",
+    "tomli>=2.0.0; python_version < '3.11'",
+    "json5>=0.9.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/carrington-dev/dotzen"
+Documentation = "https://dotzen.readthedocs.io"
+Repository = "https://github.com/carrington-dev/dotzen"
+"Bug Tracker" = "https://github.com/carrington-dev/dotzen/issues"
+Changelog = "https://github.com/carrington-dev/dotzen/blob/main/CHANGELOG.md"
+
+[project.scripts]
+dotzen = "dotzen.cli:main"
+
+[tool.setuptools]
+packages = ["dotzen"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+dotzen = ["py.typed", "templates/*.template"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by black)
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--verbose",
+    "--cov=dotzen",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml",
+]
+
+[tool.coverage.run]
+source = ["dotzen"]
+omit = ["*/tests/*", "*/test_*.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+]
