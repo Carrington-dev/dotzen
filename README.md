@@ -180,7 +180,7 @@ settings = Settings()
 
 **Django Settings**
 ```python
-from dotzen import config
+from dotzen.dotzen import config
 
 DEBUG = config('DEBUG', cast=bool)
 SECRET_KEY = config('SECRET_KEY')
