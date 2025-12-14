@@ -5,11 +5,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dotzen"
-version = "0.1.0"
+version = "0.0.1"
 description = "Peaceful, type-safe Python configuration with strict separation from code"
 readme = "README.md"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "Carrington Muleya", email = "carrington.muleya@outlook.com"}
 ]
 license = {text = "MIT"}
 classifiers = [
