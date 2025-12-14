@@ -7,7 +7,7 @@ from pathlib import Path
 
 # Read the contents of README file
 this_directory = Path(__file__).parent
-long_description = (this_directory / "PYPI.md").read_text(encoding='utf-8')
+long_description = (this_directory / "README.md").read_text(encoding='utf-8')
 
 print(this_directory)
 # Read version from package
