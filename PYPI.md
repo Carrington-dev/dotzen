@@ -50,7 +50,7 @@ pip install dotzen[all]        # Everything
 ### Simple Usage
 
 ```python
-from dotzen import config
+from dotzen.dotzen import
 
 # Automatic type casting
 DEBUG = config('DEBUG', cast=bool)
@@ -155,7 +155,7 @@ config = (ConfigBuilder()
 ### Django Settings
 
 ```python
-from dotzen import config
+from dotzen.dotzen import
 
 # settings.py
 DEBUG = config('DEBUG', cast=bool, default=False)
