@@ -1,0 +1,12 @@
+```txt
+# Sphinx and extensions
+sphinx>=6.0.0
+sphinx-rtd-theme>=1.2.0
+sphinx-autodoc-typehints>=1.22.0
+myst-parser>=1.0.0
+
+# Project dependencies (needed for autodoc to import the package)
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+typing-extensions>=4.0.0
+```
