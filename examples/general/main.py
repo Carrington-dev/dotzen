@@ -1,4 +1,4 @@
-from dotzen.dotzen import config
+from dotzen import config
 
 
 print(config('PAYFAST_KEY'))

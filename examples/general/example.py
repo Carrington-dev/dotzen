@@ -3,7 +3,7 @@
 # ============================================================================
 
 import os
-from dotzen.dotzen import ConfigBuilder, ConfigFactory, config
+from dotzen import ConfigBuilder, ConfigFactory, config
 
 
 if __name__ == "__main__":
