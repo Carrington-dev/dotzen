@@ -28,7 +28,7 @@ DotZen brings **zen** to Python configuration management. Load settings from env
 ### ✨ Key Highlights
 
 ```python
-from dotzen import config
+from dotzen.dotzen import config
 
 # Simple, elegant, type-safe
 DEBUG = config('DEBUG', cast=bool, default=False)
@@ -70,7 +70,7 @@ pip install dotzen[all]
 ### Basic Usage
 
 ```python
-from dotzen import config
+from dotzen.dotzen import config
 
 # Get configuration values with automatic type casting
 API_KEY = config('API_KEY')
@@ -82,7 +82,7 @@ ALLOWED_ORIGINS = config('ALLOWED_ORIGINS', cast=list)
 ### Advanced Usage with Builder Pattern
 
 ```python
-from dotzen import ConfigBuilder
+from dotzen.dotzen import ConfigBuilder
 
 # Build a configuration with multiple sources
 config = (ConfigBuilder()
@@ -133,7 +133,7 @@ SERVERS = config.get_list('SERVERS')       # str → list
 ### ✅ Built-in Validation
 
 ```python
-from dotzen import ConfigBuilder
+from dotzen.dotzen import ConfigBuilder
 from dotzen.validators import URLValidator, RangeValidator, RegexValidator
 
 config = (ConfigBuilder()
@@ -196,7 +196,7 @@ config = (ConfigBuilder()
 Let DotZen automatically detect your configuration files:
 
 ```python
-from dotzen import ConfigFactory
+from dotzen.dotzen import ConfigFactory
 
 # Automatically finds and loads:
 # - .env
@@ -213,7 +213,7 @@ config = ConfigFactory.auto_config()
 
 ```python
 # settings.py
-from dotzen import config
+from dotzen.dotzen import config
 
 # Core settings
 DEBUG = config('DEBUG', cast=bool, default=False)
@@ -252,7 +252,7 @@ CACHES = {
 
 ```python
 from fastapi import FastAPI, Depends
-from dotzen import ConfigBuilder
+from dotzen.dotzen import ConfigBuilder
 
 # Build configuration at startup
 config = (ConfigBuilder()
@@ -292,7 +292,7 @@ async def get_config_info():
 
 ```python
 from flask import Flask
-from dotzen import config
+from dotzen.dotzen import config
 
 app = Flask(__name__)
 
@@ -363,7 +363,7 @@ LOG_LEVEL = config('LOG_LEVEL', default='INFO')
 
 ```python
 from pydantic import BaseModel, Field
-from dotzen import config
+from dotzen.dotzen importfig
 
 class DatabaseSettings(BaseModel):
     host: str = Field(default_factory=lambda: config('DB_HOST', default='localhost'))
