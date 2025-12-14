@@ -9,14 +9,22 @@ from pathlib import Path
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text(encoding='utf-8')
 
+print(this_directory)
 # Read version from package
+# def get_version():
+#     """Read version from __version__.py"""
+#     version_file = '.' / "dotzen" / "__version__.py"
+#     version_dict = {}
+#     with open(version_file) as f:
+#         exec(f.read(), version_dict)
+#     return version_dict['__version__']
+
 def get_version():
-    """Read version from __version__.py"""
-    version_file = this_directory / "dotzen" / "__version__.py"
-    version_dict = {}
-    with open(version_file) as f:
-        exec(f.read(), version_dict)
-    return version_dict['__version__']
+    with open('dotzen/__init__.py', 'r') as f:
+        for line in f:
+            if line.startswith('__version__'):
+                return line.split('=')[1].strip().strip('"').strip("'")
+    return '0.1.0'
 
 setup(
     name="dotzen",
