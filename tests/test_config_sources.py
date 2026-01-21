@@ -1,5 +1,5 @@
 """
-tests/test_config_sources.py - Tests for configuration sources
+Tests for configuration sources
 """
 
 import pytest

@@ -1,5 +1,5 @@
 """
-tests/test_config_builder.py - Tests for ConfigBuilder and Config
+Tests for ConfigBuilder and Config
 """
 
 import pytest

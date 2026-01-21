@@ -1,5 +1,5 @@
 """
-tests/test_config_factory.py - Tests for ConfigFactory and convenience functions
+Tests for ConfigFactory and convenience functions
 """
 
 import pytest
