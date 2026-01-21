@@ -9,6 +9,7 @@ from typing import Any, Dict, Optional, Type, TypeVar, Union, List, Callable
 from pathlib import Path
 from dataclasses import dataclass
 from enum import Enum
+import threading
 
 # Type variables for generic typing
 T = TypeVar('T')
@@ -527,3 +528,26 @@ def config(key: str, default: Any = UNDEFINED, cast: Optional[Type] = None) -> A
     """
     return _global_config.get(key, default, cast)
 
+
+class ConfigSingleton:
+    """
+    Singleton Pattern - provides global config instance (Thread-safe)
+    """
+    _instance: Optional[Config] = None
+    _lock = threading.Lock()
+    
+    @classmethod
+    def get_instance(cls) -> Config:
+        """Get or create singleton instance (thread-safe)"""
+        if cls._instance is None:
+            with cls._lock:
+                # Double-check locking pattern
+                if cls._instance is None:
+                    cls._instance = ConfigFactory.auto_config()
+        return cls._instance
+    
+    @classmethod
+    def reset(cls):
+        """Reset singleton (useful for testing)"""
+        with cls._lock:
+            cls._instance = None
