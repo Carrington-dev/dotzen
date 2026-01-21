@@ -1,5 +1,7 @@
 __version__ = "1.0.0"
 __author__ = "Carrington Muleya"
+__name__ = "dotzen"
+
 
 from .dotzen import ConfigBuilder, ConfigFactory, config
 from .encryption import (
