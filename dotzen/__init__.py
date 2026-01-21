@@ -1,7 +1,8 @@
 __version__ = "1.0.0"
 __author__ = "Carrington Muleya"
 __name__ = "dotzen"
-
+__license__ = 'MIT'
+__copyright__ = 'Copyright 2025-2026 Carrington Muleya'
 
 from .dotzen import ConfigBuilder, ConfigFactory, config
 from .encryption import (
