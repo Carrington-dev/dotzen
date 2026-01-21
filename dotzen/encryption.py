@@ -351,14 +351,26 @@ def konfig(
     
     Example:
         from dotzen.encryption import konfig
+        from dotzen import ConfigBuilder
         
-        SECRET_KEY = konfig('SECRET_KEY')
+        # Create a proper config instance
+        config_inst = ConfigBuilder().add_environment().build()
+        SECRET_KEY = konfig('SECRET_KEY', config_instance=config_inst)
+        
+        # Or for quick use (uses global singleton)
         API_KEY = konfig('API_KEY', algorithm='fernet')
         DEBUG = konfig('DEBUG', cast=bool, encrypted=False)
     """
     if config_instance is None:
-        from dotzen.dotzen import config as default_config
-        config_instance = default_config
+        # Import here to avoid circular imports
+        from dotzen.dotzen import ConfigSingleton
+        config_instance = ConfigSingleton.get_instance()
+    
+    # If config_instance is a function (the global config convenience function),
+    # get the actual Config instance instead
+    if callable(config_instance) and hasattr(config_instance, '__name__') and config_instance.__name__ == 'config':
+        from dotzen.dotzen import ConfigSingleton
+        config_instance = ConfigSingleton.get_instance()
     
     secure_config = SecureConfig(config_instance, default_algorithm=algorithm)
     return secure_config.konfig(key, default, cast, encrypted, algorithm)
@@ -395,4 +407,3 @@ def encrypt_for_env(value: str, algorithm: str = 'base64', show_key: bool = Fals
         return encrypted
     else:
         return EncryptionManager.encrypt(value, algorithm)
-
