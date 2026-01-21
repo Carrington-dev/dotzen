@@ -259,7 +259,7 @@ class TestIntegrationScenarios:
         config_data = {
             "app": {
                 "name": "MyApp",
-                "version": "1.0.0"
+                "version": "1.1.0"
             },
             "database": {
                 "primary": {
@@ -284,7 +284,7 @@ class TestIntegrationScenarios:
         
         # Access nested values with dot notation
         assert config.get('app.name') == 'MyApp'
-        assert config.get('app.version') == '1.0.0'
+        assert config.get('app.version') == '1.1.0'
         assert config.get('database.primary.host') == 'db1.example.com'
         assert config.get_int('database.primary.port') == 5432
         assert config.get('database.replica.host') == 'db2.example.com'

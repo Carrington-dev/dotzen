@@ -266,7 +266,7 @@ config = (ConfigBuilder()
 app = FastAPI(
     title=config('APP_NAME', default='My API'),
     debug=config.get_bool('DEBUG', default=False),
-    version=config('VERSION', default='1.0.0'),
+    version=config('VERSION', default='1.1.0'),
 )
 
 # Dependency injection
@@ -278,7 +278,7 @@ async def health_check():
     return {
         "status": "healthy",
         "environment": config('ENVIRONMENT', default='development'),
-        "version": config('VERSION', default='1.0.0'),
+        "version": config('VERSION', default='1.1.0'),
     }
 
 @app.get("/config")

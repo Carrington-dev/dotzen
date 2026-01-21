@@ -133,7 +133,7 @@ app = FastAPI(
 def read_root():
     return {
         "environment": config('ENVIRONMENT', default='development'),
-        "version": config('VERSION', default='1.0.0'),
+        "version": config('VERSION', default='1.1.0'),
     }
 ```
 

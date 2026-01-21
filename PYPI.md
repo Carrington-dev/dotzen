@@ -195,7 +195,7 @@ app = FastAPI(
 def get_config():
     return {
         "environment": config('ENVIRONMENT', 'development'),
-        "version": config('VERSION', '1.0.0'),
+        "version": config('VERSION', '1.1.0'),
     }
 ```
 
