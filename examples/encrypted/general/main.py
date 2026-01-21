@@ -30,5 +30,5 @@ if __name__ == "__main__":
     
     # Encrypt for .env file
     print("4. Encrypt for .env file:")
-    env_value = encrypt_for_env("my-super-secret-api-key")
-    print(f"Add to .env: API_KEY={env_value}")
+    # env_value = encrypt_for_env("my-super-secret-api-key")
+    # print(f"Add to .env: API_KEY={env_value}")
