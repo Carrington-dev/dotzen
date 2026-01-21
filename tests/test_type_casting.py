@@ -2,6 +2,7 @@
 tests/test_edge_cases.py - Edge cases and error handling tests
 """
 
+import sys
 import pytest
 import os
 import json
@@ -132,6 +133,10 @@ class TestErrorHandling:
         
         env_file = Path(self.temp_dir) / '.env'
         env_file.write_text('KEY=value\n')
+
+        # Skip on Windows as file permissions work differently
+        if sys.platform == 'win32':
+            pytest.skip("File permission test not applicable on Windows")
         
         # Remove read permissions
         os.chmod(env_file, stat.S_IWRITE)
