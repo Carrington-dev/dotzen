@@ -1,7 +1,7 @@
-from fastapi import Flask
+from flask import Flask
 from dotzen import config
 
-app = Flask()
+app = Flask(__name__)
 
 SECRET_KEY = config("SECRET_KEY", default="key")
 
