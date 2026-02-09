@@ -58,7 +58,7 @@ AWS Secrets Manager
 
 .. code-block:: bash
 
-   pip install dotzen[aws]
+   pip install dotzen
 
 **Includes:**
 
@@ -70,7 +70,7 @@ Google Cloud Secret Manager
 
 .. code-block:: bash
 
-   pip install dotzen[gcp]
+   pip install dotzen
 
 **Includes:**
 
@@ -81,7 +81,7 @@ Azure Key Vault
 
 .. code-block:: bash
 
-   pip install dotzen[azure]
+   pip install dotzen
 
 **Includes:**
 
@@ -93,7 +93,7 @@ HashiCorp Vault
 
 .. code-block:: bash
 
-   pip install dotzen[vault]
+   pip install dotzen
 
 **Includes:**
 
@@ -106,7 +106,7 @@ Install support for all cloud providers at once:
 
 .. code-block:: bash
 
-   pip install dotzen[cloud]
+   pip install dotzen
 
 Installation with File Format Support
 --------------------------------------
@@ -118,7 +118,7 @@ YAML Support
 
 .. code-block:: bash
 
-   pip install dotzen[yaml]
+   pip install dotzen
 
 **Includes:**
 
@@ -129,7 +129,7 @@ TOML Support
 
 .. code-block:: bash
 
-   pip install dotzen[toml]
+   pip install dotzen
 
 **Includes:**
 
@@ -140,7 +140,7 @@ JSON5 Support
 
 .. code-block:: bash
 
-   pip install dotzen[json5]
+   pip install dotzen
 
 **Includes:**
 
@@ -153,7 +153,7 @@ Install support for all file formats:
 
 .. code-block:: bash
 
-   pip install dotzen[formats]
+   pip install dotzen
 
 Complete Installation
 ---------------------
@@ -162,7 +162,7 @@ Install everything (all cloud providers and file formats):
 
 .. code-block:: bash
 
-   pip install dotzen[all]
+   pip install dotzen
 
 This is the recommended installation for maximum flexibility.
 
@@ -194,9 +194,9 @@ Development Extras
 
 .. code-block:: bash
 
-   pip install dotzen[dev]     # Development tools
-   pip install dotzen[test]    # Testing tools
-   pip install dotzen[docs]    # Documentation building
+   pip install dotzen     # Development tools
+   pip install dotzen    # Testing tools
+   pip install dotzen    # Documentation building
 
 Docker Installation
 -------------------
@@ -208,7 +208,7 @@ Using DotZen in a Docker container:
    FROM python:3.12-slim
 
    # Install DotZen
-   RUN pip install dotzen[all]
+   RUN pip install dotzen
 
    # Copy your application
    COPY . /app
@@ -255,7 +255,7 @@ Using venv
    dotzen-env\Scripts\activate
 
    # Install DotZen
-   pip install dotzen[all]
+   pip install dotzen
 
 Using conda
 ~~~~~~~~~~~
@@ -269,7 +269,7 @@ Using conda
    conda activate dotzen
 
    # Install DotZen
-   pip install dotzen[all]
+   pip install dotzen
 
 Using Poetry
 ~~~~~~~~~~~~
@@ -283,7 +283,7 @@ Using Poetry
    poetry add dotzen
 
    # Add with extras
-   poetry add dotzen[all]
+   poetry add dotzen
 
    # Install dependencies
    poetry install
@@ -294,7 +294,7 @@ Using Pipenv
 .. code-block:: bash
 
    # Create Pipfile
-   pipenv install dotzen[all]
+   pipenv install dotzen
 
    # Activate virtual environment
    pipenv shell
@@ -307,7 +307,7 @@ For reproducible installations, create a ``requirements.txt``:
 .. code-block:: text
 
    # requirements.txt
-   dotzen[all]==0.1.1
+   dotzen==0.1.1
    
    # Or specify exactly what you need
    dotzen==0.1.1
@@ -330,7 +330,7 @@ Upgrade to the latest version:
    pip install --upgrade dotzen
 
    # Or with extras
-   pip install --upgrade dotzen[all]
+   pip install --upgrade dotzen
 
 Uninstallation
 --------------
@@ -383,7 +383,7 @@ Common Installation Issues
    # Create fresh virtual environment
    python -m venv fresh-env
    source fresh-env/bin/activate
-   pip install dotzen[all]
+   pip install dotzen
 
 Platform-Specific Notes
 -----------------------
@@ -401,7 +401,7 @@ Linux
    sudo dnf install python3-pip
 
    # Install DotZen
-   pip3 install dotzen[all]
+   pip3 install dotzen
 
 macOS
 ~~~~~
@@ -412,7 +412,7 @@ macOS
    brew install python3
 
    # Install DotZen
-   pip3 install dotzen[all]
+   pip3 install dotzen
 
 Windows
 ~~~~~~~
@@ -423,7 +423,7 @@ Windows
    # Then in PowerShell or CMD:
    
    python -m pip install --upgrade pip
-   pip install dotzen[all]
+   pip install dotzen
 
 Verification
 ------------
