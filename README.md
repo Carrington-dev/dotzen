@@ -60,13 +60,13 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=list)
 pip install dotzen
 
 # With cloud provider support
-pip install dotzen[aws]        # AWS Secrets Manager
-pip install dotzen[gcp]        # Google Cloud Secret Manager
-pip install dotzen[azure]      # Azure Key Vault
-pip install dotzen[cloud]      # All cloud providers
+pip install dotzen        # AWS Secrets Manager
+pip install dotzen        # Google Cloud Secret Manager
+pip install dotzen      # Azure Key Vault
+pip install dotzen      # All cloud providers
 
 # Everything included
-pip install dotzen[all]
+pip install dotzen
 ```
 
 ### Basic Usage
@@ -484,8 +484,8 @@ builder.add_environment()              # Environment variables
 builder.add_environment('APP_')        # With prefix
 builder.add_dotenv('.env')             # .env file
 builder.add_json('config.json')        # JSON file
-builder.add_yaml('config.yaml')        # YAML file (requires dotzen[yaml])
-builder.add_toml('config.toml')        # TOML file (requires dotzen[toml])
+builder.add_yaml('config.yaml')        # YAML file (requires dotzen)
+builder.add_toml('config.toml')        # TOML file (requires dotzen)
 builder.add_secrets('/run/secrets')    # Docker secrets
 builder.add_aws_secrets('prod/myapp')  # AWS Secrets Manager
 builder.add_gcp_secrets('projects/x')  # GCP Secret Manager
@@ -630,25 +630,25 @@ def test_config():
 
 ```bash
 # Cloud providers
-pip install dotzen[aws]        # AWS Secrets Manager (boto3)
-pip install dotzen[gcp]        # Google Cloud Secret Manager
-pip install dotzen[azure]      # Azure Key Vault
-pip install dotzen[vault]      # HashiCorp Vault
-pip install dotzen[cloud]      # All cloud providers
+pip install dotzen        # AWS Secrets Manager (boto3)
+pip install dotzen        # Google Cloud Secret Manager
+pip install dotzen      # Azure Key Vault
+pip install dotzen      # HashiCorp Vault
+pip install dotzen      # All cloud providers
 
 # File formats
-pip install dotzen[yaml]       # YAML support (PyYAML)
-pip install dotzen[toml]       # TOML support
-pip install dotzen[json5]      # JSON5 support
-pip install dotzen[formats]    # All formats
+pip install dotzen       # YAML support (PyYAML)
+pip install dotzen       # TOML support
+pip install dotzen      # JSON5 support
+pip install dotzen    # All formats
 
 # Development
-pip install dotzen[dev]        # Testing and dev tools
-pip install dotzen[docs]       # Documentation building
-pip install dotzen[test]       # Testing with cloud mocks
+pip install dotzen        # Testing and dev tools
+pip install dotzen       # Documentation building
+pip install dotzen       # Testing with cloud mocks
 
 # Everything
-pip install dotzen[all]        # All features
+pip install dotzen        # All features
 ```
 
 ---
